@@ -1,0 +1,44 @@
+CREATE TABLE temperatura_coletor (
+  idtemperatura_coleto INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  temperatura_coletor VARCHAR(255) BINARY NULL,
+  PRIMARY KEY(idtemperatura_coleto)
+);
+
+CREATE TABLE incidencia_solar (
+  idincidencia_solar INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  descricaoincidencia_solar DOUBLE NULL,
+  PRIMARY KEY(idincidencia_solar)
+);
+
+CREATE TABLE angulacao_espelho (
+  idangulacao_espelho INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  angulacao_espelho VARCHAR(255) NULL,
+  PRIMARY KEY(idangulacao_espelho)
+);
+
+CREATE TABLE monitoramento (
+  idmonitoramento INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  angulacao_espelho_idangulacao_espelho INTEGER UNSIGNED NOT NULL,
+  incidencia_solar_idincidencia_solar INTEGER UNSIGNED NOT NULL,
+  temperatura_coletor_idtemperatura_coleto INTEGER UNSIGNED NOT NULL,
+  descricaomonitoramento VARCHAR(255) NULL,
+  data_monitoramento DATE NULL,
+  hora_monitoramento TIME NULL,
+  PRIMARY KEY(idmonitoramento),
+  INDEX monitoramento_FKIndex1(temperatura_coletor_idtemperatura_coleto),
+  INDEX monitoramento_FKIndex2(incidencia_solar_idincidencia_solar),
+  INDEX monitoramento_FKIndex3(angulacao_espelho_idangulacao_espelho),
+  FOREIGN KEY(temperatura_coletor_idtemperatura_coleto)
+    REFERENCES temperatura_coletor(idtemperatura_coleto)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(incidencia_solar_idincidencia_solar)
+    REFERENCES incidencia_solar(idincidencia_solar)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(angulacao_espelho_idangulacao_espelho)
+    REFERENCES angulacao_espelho(idangulacao_espelho)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION
+);
+
