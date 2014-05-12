@@ -8,6 +8,11 @@
 
 require_once 'jpgraph-3.5.0b1/src/jpgraph.php';
 require_once 'jpgraph-3.5.0b1/src/jpgraph_line.php';
+include_once 'controle/conexaoBanco.php';
+
+
+$db = new Connect_MySql();
+$query = "Select  FROM monitoramento";
 
 $teste = array(10,20,30,0,50);
 

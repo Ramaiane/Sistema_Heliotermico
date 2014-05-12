@@ -10,9 +10,12 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <form id="form1" action="grafico.php" method="post">
+        <!--<form id="form1" action="grafico.php" method="post">
             <input type="submit" id="enviar" value="Enviar"/>
-        </form>
+        </form>-->
+        <?php
+            echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;URL=/Sistema_Heliotermico/interface/index.html'>";
+        ?>
             
     </body>
 </html>
