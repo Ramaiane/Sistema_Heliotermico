@@ -26,18 +26,25 @@
      var $host = "localhost";
      var $user = "root";
      var $pass = "";
-     var $db = "heliotermico";
+     var $db = "sistema_heliotermico";
      var $con = "";
      var $sql;
              
 
      public function connectDB() {
-          $this->con = mysqli_connect($this->host, $this->user, $this->pass, $this->db) or die ('Erro na rotina de conexao: '.  mysql_error());
+          $this->con = mysql_connect($this->host, $this->user, $this->pass, $this->db) or die ('Erro na rotina de conexao: '.  mysql_error());
          
      }
     
+     function selectDB(){
+         $sel = mysql_select_db($this->db) or die ('Erro: '.  mysql_error());
+         if($sel)
+              return TRUE;
+         else
+               return FALSE;
+     }
      function queryDB($query){
-         $resultQuery = mysqli_query($this->sql, $query) or die ('Erro na consulta '.  mysql_error());
+         $resultQuery = mysql_query($this->sql, $query) or die ('Erro na consulta '.mysql_error());
          return $resultQuery;
      }
      
@@ -54,8 +61,8 @@
      }
  }
  
- $a = new Connect_MySql();
- $a->connectDB()
+ //$a = new Connect_MySql();
+ //$a->connectDB()
          
         
     
