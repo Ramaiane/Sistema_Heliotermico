@@ -6,8 +6,8 @@
  * and open the template in the editor.
  */
 
-        include '../../jpgraph-3.5.0b1/src/jpgraph.php';
-        include '../../jpgraph-3.5.0b1/src/jpgraph_line.php';
+        include '../jpgraph-3.5.0b1/src/jpgraph.php';
+        include '../jpgraph-3.5.0b1/src/jpgraph_line.php';
 
             $teste = array(15,25,12,9,30);
 
