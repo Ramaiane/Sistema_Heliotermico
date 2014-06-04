@@ -14,7 +14,7 @@ and open the template in the editor.
             <input type="submit" id="enviar" value="Enviar"/>
         </form>-->
         <?php
-            echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;URL=/Sistema_Heliotermico/interface/index.html'>";
+            echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;URL=/Sistema_Heliotermico/visao/index.html'>";
         ?>
             
     </body>
