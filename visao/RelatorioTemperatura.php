@@ -4,6 +4,16 @@
 <title>RelatórioTemperatura</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="style.css" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="js/datetimepicker.js">
+
+//Date Time Picker script- by TengYong Ng of http://www.rainforestnet.com
+//Script featured on JavaScript Kit (http://www.javascriptkit.com)
+//For this script, visit http://www.javascriptkit.com 
+//Translate to portuguese by Francisco Carlao francisco@signed.pt
+
+
+</script>
+<script type="text/javascript" src="js/ajax.js"></script>
 </head>
 <body>
 <div class="main">
@@ -21,8 +31,8 @@
     <div class="menu">
       <ul>
         <li><a href="index.html"><span>Home</span></a></li>
-        <li><a href="relatorios.html"><span>Relatórios</span></a></li>
-        <li><a href="monitoramento.html" class="active"><span>Monitoramento</span></a></li>
+        <li><a href="relatorios.html" class="active"><span>Relatórios</span></a></li>
+        <li><a href="monitoramento.html"><span>Monitoramento</span></a></li>
         <li><a href="sobre.html"><span>Sobre nós</span></a></li>
        <!-- <li><a href="contact.html"><span>Contato</span></a></li>-->
       </ul>
@@ -63,11 +73,36 @@
     <div class="big_center no_margin">
       <h2>Temperatura</h2>
       <p class="spec">Gráfico gerado da temperatura gerada pelo sistema heliotérmico</p>
-     <!-- <input type="Text" id="data" maxlength="25" size="25">
-          <a href="javascript:NewCal('data','ddmmyyyy')"><img src="service_1.png"></a>
-      </input>-->
-          
-      <p><img src="../controle/temperaturaControle.php" title="temperatura" /></p>
+     <form id="form1" action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
+      <table width="700" cellspacing=0 border="0" cellpadding="0" align="center" summary="">
+	  <tr>
+	  	<td>
+	  		<div class="subtitle">Data</div>	
+	  	
+	  	</td>
+	  </tr>
+	  <tr>
+	  	<td>
+                    <input type="Text" id="data" name="data" maxlength="25" size="25">
+                            <a href="javascript:NewCal('data','ddmmyyyy')"><img src="images/cal.gif" width="16" height="16" border="0" alt="Escolha Data"></a>
+	  		<span class="descriptions">Escolha a data</span>
+                      <!--  <p><a href="javascript:mostrar()"><img src="images/but_subscribe.gif" alt="picture" width="91" height="23" border="0" /></a></p>
+                         <button href="javascript:mostrar()">Mostrar Grafico</button>
+                       <form id="form1" action="js/ajax.js" method="post">
+                            <a href="javascript:mostrar()">Mostrar Grafico</a>
+                            <input type="submit" id="enviar" value="enviar" />
+                        </form>-->
+                        <input type="submit" id="enviar" value="enviar" />
+                             
+	  	</td>
+	  </tr>
+        </table> 
+        </form>
+       <?php
+        if(isset($_POST['submit'])) // Se existir o array post, pq ele não retorna undefined index.
+       { ?>
+        <p><img src="../controle/temperaturaControleGrafico.php" title="temperatura" /></p>    
+        <?php  }?>
       <p>&nbsp;</p>
     </div>
     <div class="clr"></div>

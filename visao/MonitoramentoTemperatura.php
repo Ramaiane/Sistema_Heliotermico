@@ -65,7 +65,7 @@
     <div class="big_center no_margin">
       <h2>Temperatura</h2>
       <p class="spec">Gráficos gerados para monitoramento remoto da incidencia solar captada e temperatura gerada pelo sistema heliotérmico</p>
-      <p><img src="../controle/temperaturaControle.php" title="temperatura" /></p>
+      <p><img src="../controle/temperaturaControleGraficomonitoramento.php" title="temperatura" /></p>
       <p>&nbsp;</p>
     </div>
     <div class="clr"></div>

@@ -14,7 +14,7 @@
         //conexao com banco 
         $connDB  = conexaoPDO::getConnection();
     
-         $queryData = "2014-05-28";
+        // $queryData = "2014-05-28";
     
         //dados
         $dadosincid = array();
@@ -26,7 +26,7 @@
         }
         
         //consulta no banvo
-        $sql = "SELECT * FROM monitoramento WHERE data_monitoramento = ' $queryData'";
+        $sql = "SELECT * FROM monitoramento WHERE data_monitoramento = CURDATE()";
         $resultsquery = $connDB->query($sql);
              
         while ($row = $resultsquery->fetch(PDO::FETCH_ASSOC)){

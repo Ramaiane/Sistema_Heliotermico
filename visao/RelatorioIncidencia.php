@@ -21,8 +21,8 @@
     <div class="menu">
       <ul>
         <li><a href="index.html"><span>Home</span></a></li>
-        <li><a href="relatorios.html"><span>Relatórios</span></a></li>
-        <li><a href="monitoramento.html" class="active"><span>Monitoramento</span></a></li>
+        <li><a href="relatorios.html" class="active"><span>Relatórios</span></a></li>
+        <li><a href="monitoramento.html" ><span>Monitoramento</span></a></li>
         <li><a href="sobre.html"><span>Sobre nós</span></a></li>
        <!-- <li><a href="contact.html"><span>Contato</span></a></li>-->
       </ul>
