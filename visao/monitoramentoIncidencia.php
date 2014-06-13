@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>MonitoramentoIncidencia</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="refresh" content="5; monitoramentoIncidencia.php" />
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -23,9 +23,9 @@
     <div class="menu">
       <ul>
         <li><a href="index.html"><span>Home</span></a></li>
-        <li><a href="relatorios.html"><span>Relatórios</span></a></li>
+        <li><a href="relatorios.html"><span>Relatorios</span></a></li>
         <li><a href="monitoramento.html" class="active"><span>Monitoramento</span></a></li>
-        <li><a href="sobre.html"><span>Sobre nós</span></a></li>
+        <li><a href="sobre.html"><span>Sobre nos</span></a></li>
        <!-- <li><a href="contact.html"><span>Contato</span></a></li>-->
       </ul>
     </div>
@@ -35,7 +35,7 @@
     <div class="slider_t">
       <div class="slider_b small">
         <div class="title_text">
-          <h2>Gráfico de Incidencia</h2>
+          <h2>Grafico de Incidencia</h2>
         </div>
       </div>
     </div>
@@ -45,10 +45,10 @@
       <div class="box no_margin">
         <div class="box_t">
           <div class="box_b">
-            <h2>Gráficos de monitoramentos</h2>
+            <h2>Graficos de monitoramentos</h2>
             <ul>
-              <li><a href="#" class="active">Gráfico de Incidencia Solar</a></li>
-              <li><a href="#"> Gráfico de temperatura</a></li>
+              <li><a href="#" class="active">Grafico de Incidencia Solar</a></li>
+              <li><a href="#"> Grafico de temperatura</a></li>
             <!--  <li><a href="#"> Sub Navigation 3</a></li>
               <li><a href="#"> Sub Navigation 4</a></li>-->
             </ul>
@@ -64,8 +64,14 @@
     </div>
     <div class="big_center no_margin">
       <h2>Incidencia Solar</h2>
-      <p class="spec">Gráficos gerados para monitoramento remoto da incidencia solar captada e temperatura gerada pelo sistema heliotérmico</p>
+      <p class="spec">Graficos gerados para monitoramento remoto da incidencia solar captada e temperatura gerada pelo sistema heliotermico. Grafico L1</p>
+      <p class="spec">Graficos do sensor L1</p>
       <p><img src="../controle/incidenciaControleGraficoMonitoramento.php" title="temperatura" /></p>
+      <p class="spec">Graficos do sensor L2</p>
+      <p><img src="../controle/incidenciaControleGraficoMonitoramentoL2.php" title="temperatura" /></p>
+      
+      <p class="spec">Graficos do sensor L3</p>
+      <p><img src="../controle/incidenciaControleGraficoMonitoramentoL3.php" title="temperatura" /></p>
       <p>&nbsp;</p>
     </div>
     <div class="clr"></div>
@@ -74,7 +80,7 @@
 <div class="footer">
   <div class="FBG">
     <div class="footer_resize">
-      <p class="leftt">© Copyright Heliotérmico - Sensoriamento Remoto.  Dot Com. All Rights Reserved <br />
+      <p class="leftt">© Copyright Heliotermico - Sensoriamento Remoto.  Dot Com. All Rights Reserved <br />
         <a href="#">Home</a> | <a href="#">Contact</a> | <a href="#">RSS</a> </p>
       <p class="rightt"><a href="http://dreamtemplate.com/"> Design by DreamTemplate </a></p>
       <div class="clr"></div>

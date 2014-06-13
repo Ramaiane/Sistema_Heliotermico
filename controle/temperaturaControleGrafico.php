@@ -30,15 +30,23 @@
              
              while ($row = $resultsquery->fetch(PDO::FETCH_ASSOC)){    
                  $dadostemp[] = $row['temperatura'];
+                 $hora[] = $row['hora'];
              }   
           
             $graph = new Graph(600, 300);
-            $graph->SetScale("datlin");
+            $graph->SetScale("datlin", 0,100);
+             $graph->SetMarginColor('khaki2@0.6');
 
             $line = new LinePlot($dadostemp);
+            $line->SetLegend("Temperatura º");
+            $line->SetWeight( 2 );
                  
             $line->value->Show();
             $line->value->SetColor("blue");
+            $line->value->SetFont(FF_FONT1, FS_BOLD);
+            
+             // Set the fill color partly transparent
+             $line->SetFillColor("blue@0.4");
             $line->value->SetFont(FF_FONT1, FS_BOLD);
 
             $graph->Add($line);
@@ -47,8 +55,16 @@
             $graph->img->SetMargin(40,40,40,40);
 
             $graph->title->Set("Relatório: grafico temperatura");
+            $graph->subtitle->Set('Data: '.$data);
+            $graph->subtitle->SetFont(FF_ARIAL,FS_ITALIC,11);
+            
             $graph->xaxis->title->Set("hora");
             $graph->yaxis->title->Set("temperatura");
+             $graph->xaxis->SetLabelAngle(90);
+             $graph->xaxis->SetTickLabels($hora);
+             
+            $graph->yaxis->title->SetFont( FF_FONT1 , FS_BOLD );
+            $graph->xaxis->title->SetFont( FF_FONT1 , FS_BOLD );
 
             $graph->Stroke(); 
               

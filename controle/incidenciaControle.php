@@ -14,7 +14,9 @@
         //conexao com banco 
         $connDB  = conexaoPDO::getConnection();
     
-         $queryData = "2014-05-28";
+        // $queryData = "2014-06-09";
+        $data = $_POST["data"];
+        $datetime = date("Y-m-d", strtotime($data));
     
         //dados
         $dadosincid = array();
@@ -26,12 +28,14 @@
         }
         
         //consulta no banvo
-        $sql = "SELECT * FROM monitoramento WHERE data_monitoramento = ' $queryData'";
+        $sql = "SELECT * FROM monitoramento WHERE data_monitoramento = '$datetime'";
         $resultsquery = $connDB->query($sql);
              
         while ($row = $resultsquery->fetch(PDO::FETCH_ASSOC)){
                   
                  $dadosincid[] = $row['sensor_L1'];
+                 $dadosincidL2[] = $row['sensor_L2'];
+                 $dadosincidL3[] = $row['sensor_L3'];
                  $hora[] = $row['hora'];
              }  
 
@@ -40,20 +44,36 @@
             $graph->SetScale("datlin",0, 100);
             $graph->SetMarginColor('khaki2@0.6');
 
+            //cria primeira linha
             $line = new LinePlot($dadosincid);
             $line->SetLegend("Sensor L1");
             $line->SetWeight( 2 );
-
-
             $line->value->Show();
             $line->value->SetColor("blue");
-    
+            $graph->Add($line);
+            
+            //cria segunda linha
+            $line2 = new LinePlot($dadosincidL2);
+            $line2->SetLegend("Sensor L2");
+            $line2->SetWeight( 2 );
+            $line2->value->Show();
+            $line2->value->SetColor("red");
+            $graph->Add($line2);
+            
+             //cria terceira linha
+            $line3 = new LinePlot($dadosincidL2);
+            $line3->SetLegend("Sensor L3");
+            $line3->SetWeight( 2 );
+            $line3->value->Show();
+            $line3->value->SetColor("green");
+            $graph->Add($line3);
+            
             // Set the fill color partly transparent
-            $line->SetFillColor("blue@0.4");
-            $line->value->SetFont(FF_FONT1, FS_BOLD);
+           // $line->SetFillColor("blue@0.4");
+           // $line->value->SetFont(FF_FONT1, FS_BOLD);
                
 
-            $graph->Add($line);
+            
 
             $graph->img->SetMargin(40,40,40,100);
 

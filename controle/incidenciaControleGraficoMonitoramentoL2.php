@@ -45,8 +45,8 @@
             $graph->SetScale("datlin",0, 100);
             $graph->SetMarginColor('khaki2@0.6');
 
-            $line = new LinePlot($dadosincidL1);
-            $line->SetLegend("Sensor L1");
+            $line = new LinePlot($dadosincidL2);
+            $line->SetLegend("Sensor L2");
             $line->SetWeight( 2 );
 
 
@@ -62,7 +62,7 @@
 
             $graph->img->SetMargin(40,40,40,100);
 
-            $graph->title->Set("Incidencia Solar - sensor L1");          
+            $graph->title->Set("Incidencia Solar - sensor L2");          
             $graph->subtitle->Set('(Data: '.date('j M Y)'));
             $graph->subtitle->SetFont(FF_ARIAL,FS_ITALIC,11);
             

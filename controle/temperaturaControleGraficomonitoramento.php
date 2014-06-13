@@ -14,10 +14,6 @@
         
         $connDB  = conexaoPDO::getConnection();
         
-        
-    $data = $_REQUEST['data']; 
-    //$queryData = "2014-06-06";
-    
     $dadostemp = array();
     $datetime = array();
     
@@ -27,40 +23,7 @@
           return Date('H:i:s',$datetime);
     }
     
-    
-    //$dadoshora = array();
-    // $data = array();
-/*
-    class temperaturaDAO{
- 
-    public $id, $hora, $data_monitoramento, $temperatura, $sensor_L1, $sensor_L2, $sensor_L3, $entry, $query;
 
-    public function __construct() {
-             //$this->db = $connDB;
-             $this->temperatura = array();
-             //$this->hora = array();
-             //$this->data_monitoramento= array();
-            // $this->temperatura = "{$this->temperatura}";
-             
-            //$this->data_monitoramento = "{$this->data_monitoramento}";
-         }
-         
-     }
-            $sql = "SELECT * FROM monitoramento ";    //WHERE data_monitoramento = ' $queryData
-            $resultsquery = $connDB->query($sql);
-            $resultsquery->setFetchMode(PDO::FETCH_CLASS, 'temperaturaDAO');
-     
-            while($row = $resultsquery->fetch($temperatura)){
-
-                //$row->temperatura[] = $dadostemp; 
-              //  $dadostemp = $row["temperatura"];
-               // $row->hora[] = $dadoshora;
-                //$row->data_monitoramento[] = $data;
-                
-                //echo $row->temperatura, '<br>';
-               //$row->temperatura[] = $data;
-                $data[] = $row["data"]; 
-              }  */
      
              $sql = "SELECT * FROM monitoramento WHERE data_monitoramento = CURDATE()";
              $resultsquery = $connDB->query($sql);
@@ -73,7 +36,7 @@
              }   
     
             $graph = new Graph(600, 400);
-            $graph->SetScale("textlin",0, 100);
+            $graph->SetScale("datlin",0, 100);
             $graph->SetMarginColor('khaki2@0.6');
 
             $line = new LinePlot($dadostemp);

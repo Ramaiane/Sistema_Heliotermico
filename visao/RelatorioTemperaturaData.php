@@ -1,7 +1,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
+    <?php
+        if(isset($_POST['submit'])){ // Se existir o array post, pq ele não retorna undefined index.
+        //<p><img src="../controle/temperaturaControleGrafico.php" title="temperatura" /></p>    
+        include '../controle/temperaturaControleGrafico.php';
+       }?>
 <head>
-<title>RelatórioIncidencia</title>
+<title>RelatórioTemperatura</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="style.css" rel="stylesheet" type="text/css" />
 <script language="javascript" type="text/javascript" src="js/datetimepicker.js">
@@ -13,6 +19,7 @@
 
 
 </script>
+<script type="text/javascript" src="js/ajax.js"></script>
 </head>
 <body>
 <div class="main">
@@ -31,7 +38,7 @@
       <ul>
         <li><a href="index.html"><span>Home</span></a></li>
         <li><a href="relatorios.html" class="active"><span>Relatórios</span></a></li>
-        <li><a href="monitoramento.html" ><span>Monitoramento</span></a></li>
+        <li><a href="monitoramento.html"><span>Monitoramento</span></a></li>
         <li><a href="sobre.html"><span>Sobre nós</span></a></li>
        <!-- <li><a href="contact.html"><span>Contato</span></a></li>-->
       </ul>
@@ -42,7 +49,7 @@
     <div class="slider_t">
       <div class="slider_b small">
         <div class="title_text">
-          <h2>Relatório de Incidencia Solar</h2>
+          <h2>Relatório de Temperatura</h2>
         </div>
       </div>
     </div>
@@ -52,9 +59,9 @@
       <div class="box no_margin">
         <div class="box_t">
           <div class="box_b">
-            <h2>Relatório de Incidencia Solar</h2>
+            <h2>Relatório de Temperatura</h2>
             <ul>
-                <li><a href="../controle/incidenciaControleRelatorio.php" class="active">Gerar Relatório PDF </a></li>
+                <li><a href="../controle/temperaturaControleRelatorio.php" class="active">Gerar Relatório PDF </a></li>
               <!--<li><a href="#"> Gráfico de temperatura</a></li>
              <li><a href="#"> Sub Navigation 3</a></li>
               <li><a href="#"> Sub Navigation 4</a></li>-->
@@ -70,10 +77,10 @@
       </div>-->
     </div>
     <div class="big_center no_margin">
-      <h2>Incidencia solar</h2>
-      <p class="spec">Gráfico gerado da Incidencia solar captada pelo sistema heliotérmico</p>
-      <form  method="POST" action="../controle/incidenciaControle.php">
-          <table width="700" cellspacing=0 border="0" cellpadding="0" align="center" summary="">
+      <h2>Temperatura</h2>
+      <p class="spec">Gráfico gerado da temperatura gerada pelo sistema heliotérmico</p>
+      <form  method="POST" action="../controle/temperaturaControleGrafico.php">
+      <table width="700" cellspacing=0 border="0" cellpadding="0" align="center" summary="">
 	  <tr>
 	  	<td>
 	  		<div class="subtitle">Data</div>	
@@ -96,11 +103,10 @@
 	  	</td>
 	  </tr>
         </table> 
-      </form>
-     <!-- <input type="Text" id="data" maxlength="25" size="25">
-          <a href="javascript:NewCal('data','ddmmyyyy')"><img src="service_1.png"></a>
-      </input>-->
-         
+          
+        </form>
+      <p class="spec">Graficos do sensor L1</p>
+      <p><img src="../controle/temperaturaControleGrafico.php" title="temperatura" /></p>
       <p>&nbsp;</p>
     </div>
     <div class="clr"></div>

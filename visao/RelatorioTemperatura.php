@@ -1,5 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
+    <?php
+        if(isset($_POST['submit'])){ // Se existir o array post, pq ele não retorna undefined index.
+        //<p><img src="../controle/temperaturaControleGrafico.php" title="temperatura" /></p>    
+        include '../controle/temperaturaControleGrafico.php';
+       }?>
 <head>
 <title>RelatórioTemperatura</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -73,7 +79,7 @@
     <div class="big_center no_margin">
       <h2>Temperatura</h2>
       <p class="spec">Gráfico gerado da temperatura gerada pelo sistema heliotérmico</p>
-     <form id="form1" action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="post">
+      <form  method="POST" action="../controle/temperaturaControleGrafico.php">
       <table width="700" cellspacing=0 border="0" cellpadding="0" align="center" summary="">
 	  <tr>
 	  	<td>
@@ -98,11 +104,7 @@
 	  </tr>
         </table> 
         </form>
-       <?php
-        if(isset($_POST['submit'])) // Se existir o array post, pq ele não retorna undefined index.
-       { ?>
-        <p><img src="../controle/temperaturaControleGrafico.php" title="temperatura" /></p>    
-        <?php  }?>
+
       <p>&nbsp;</p>
     </div>
     <div class="clr"></div>
