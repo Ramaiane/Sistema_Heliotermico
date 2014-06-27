@@ -117,7 +117,6 @@
     <div class="footer_resize">
       <p class="leftt">© Copyright Heliotérmico - Sensoriamento Remoto.  Dot Com. All Rights Reserved <br />
         <a href="#">Home</a> | <a href="#">Contact</a> | <a href="#">RSS</a> </p>
-      <p class="rightt"><a href="http://dreamtemplate.com/"> Design by DreamTemplate </a></p>
       <div class="clr"></div>
     </div>
   </div>
